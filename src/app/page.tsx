@@ -15,15 +15,15 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-bg-deep">
       {/* Navigation */}
-      <nav className="fixed left-0 right-0 top-0 z-40 border-b border-white/5 bg-bg-deep/80 backdrop-blur-sm">
+      <nav className="fixed left-0 right-0 top-0 z-40 border-b border-black/5 bg-bg-deep/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-          <div className="font-display text-lg font-bold text-accent-primary">
+          <div className="font-display text-lg font-bold text-black">
             Yam
           </div>
           <div className="flex items-center gap-4">
             <a
               href="#types"
-              className="rounded-sm bg-accent-primary px-4 py-2 text-sm font-medium text-white transition-all hover:bg-accent-primary/90"
+              className="rounded-full bg-black px-6 py-2 text-sm font-medium text-white transition-all hover:scale-105"
             >
               Get Started
             </a>

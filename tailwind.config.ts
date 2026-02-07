@@ -10,40 +10,37 @@ const config: Config = {
   theme: {
     extend: {
       // ============================================================================
-      // COLORS - Neon Craft v4 Design System
+      // COLORS - Ponpon Mania Inspired (Experimental)
       // ============================================================================
       colors: {
         // Background hierarchy
         bg: {
-          deep: '#0D0D0F',
-          surface: '#16161A',
-          elevated: '#1E1E24',
-          hover: '#26262E',
+          deep: '#7E7EFF',    // Ponpon Blue
+          surface: '#F894C0', // Ponpon Pink
+          elevated: '#FFFFFF',
+          hover: '#FBCFE8',
         },
         // Text hierarchy
         text: {
-          primary: '#EDEDEF',
-          secondary: '#8B8B9A',
-          muted: '#55556A',
+          primary: '#0D0D0F',
+          secondary: '#4B5563',
+          muted: '#9CA3AF',
         },
         // Accent colors
         accent: {
-          primary: '#FF6B4A', // Coral - CTAs
-          secondary: '#A855F7', // Purple - AI
-          tertiary: '#22D3EE', // Cyan - Interactive
+          primary: '#F894C0', // Pink
+          secondary: '#7E7EFF', // Blue
+          tertiary: '#000000',
         },
-        // Experience type colors
+        // Experience type colors (remapping to match palette)
         type: {
-          quiz: '#818CF8',
-          trivia: '#F87171',
-          poll: '#60A5FA',
-          personality: '#C084FC',
-          story: '#F472B6',
-          clicker: '#34D399',
-          'this-or-that': '#FBBF24',
-          memory: '#FBBF24',
-          tier: '#FB923C',
-          creator: '#22D3EE',
+          quiz: '#F894C0',
+          trivia: '#7E7EFF',
+          poll: '#F894C0',
+          personality: '#7E7EFF',
+          story: '#F894C0',
+          clicker: '#7E7EFF',
+          'this-or-that': '#000000',
         },
         // Creator progression colors
         rank: {
@@ -117,18 +114,18 @@ const config: Config = {
       // SHADOWS & GLOWS
       // ============================================================================
       boxShadow: {
-        glow: '0 0 20px rgba(255, 107, 74, 0.3)',
-        'glow-lg': '0 0 40px rgba(255, 107, 74, 0.4)',
-        'glow-purple': '0 0 20px rgba(168, 85, 247, 0.3)',
-        'glow-cyan': '0 0 20px rgba(34, 211, 238, 0.3)',
+        glow: '0 0 20px rgba(248, 148, 192, 0.3)',
+        'glow-lg': '0 0 40px rgba(248, 148, 192, 0.4)',
+        'glow-purple': '0 0 20px rgba(126, 126, 255, 0.3)',
+        'glow-cyan': '0 0 20px rgba(0, 0, 0, 0.1)',
         // Per-type glows
-        'glow-quiz': '0 0 20px rgba(129, 140, 248, 0.3)',
-        'glow-trivia': '0 0 20px rgba(248, 113, 113, 0.3)',
-        'glow-poll': '0 0 20px rgba(96, 165, 250, 0.3)',
-        'glow-personality': '0 0 20px rgba(192, 132, 252, 0.3)',
-        'glow-story': '0 0 20px rgba(244, 114, 182, 0.3)',
-        'glow-clicker': '0 0 20px rgba(52, 211, 153, 0.3)',
-        'glow-this-or-that': '0 0 20px rgba(251, 191, 36, 0.3)',
+        'glow-quiz': '0 0 20px rgba(248, 148, 192, 0.3)',
+        'glow-trivia': '0 0 20px rgba(126, 126, 255, 0.3)',
+        'glow-poll': '0 0 20px rgba(248, 148, 192, 0.3)',
+        'glow-personality': '0 0 20px rgba(126, 126, 255, 0.3)',
+        'glow-story': '0 0 20px rgba(248, 148, 192, 0.3)',
+        'glow-clicker': '0 0 20px rgba(126, 126, 255, 0.3)',
+        'glow-this-or-that': '0 0 20px rgba(0, 0, 0, 0.1)',
       },
 
       // ============================================================================

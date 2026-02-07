@@ -50,13 +50,13 @@ export function HeroSection() {
       <div className="mt-8 flex items-center gap-4">
         <Link
           href="#types"
-          className="inline-flex items-center gap-2 rounded-xl bg-accent-primary px-6 py-3 font-display text-lg font-semibold text-white shadow-glow transition-all duration-200 hover:bg-accent-primary/90 active:scale-[0.97]"
+          className="inline-flex items-center gap-2 rounded-full bg-black px-8 py-4 font-display text-lg font-semibold text-white shadow-lg transition-all duration-200 hover:scale-105 active:scale-[0.97]"
         >
           Start Creating
         </Link>
         <a
           href="#types"
-          className="rounded-xl border border-white/10 px-6 py-3 text-lg font-medium text-text-secondary transition-colors hover:border-white/20 hover:text-text-primary"
+          className="rounded-full border-2 border-black px-8 py-4 text-lg font-bold text-black transition-colors hover:bg-black hover:text-white"
         >
           See Examples
         </a>

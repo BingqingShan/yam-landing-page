@@ -9,32 +9,32 @@
 @layer base {
   :root {
     /* Background hierarchy */
-    --bg-deep: #0d0d0f;
-    --bg-surface: #16161a;
-    --bg-elevated: #1e1e24;
-    --bg-hover: #26262e;
+    --bg-deep: #7e7eff;
+    --bg-surface: #f894c0;
+    --bg-elevated: #ffffff;
+    --bg-hover: #fbcfe8;
 
     /* Text hierarchy */
-    --text-primary: #ededef;
-    --text-secondary: #8b8b9a;
-    --text-muted: #55556a;
+    --text-primary: #0d0d0f;
+    --text-secondary: #4b5563;
+    --text-muted: #9ca3af;
 
     /* Accent colors */
-    --accent-primary: #ff6b4a;
-    --accent-secondary: #a855f7;
-    --accent-tertiary: #22d3ee;
+    --accent-primary: #f894c0;
+    --accent-secondary: #7e7eff;
+    --accent-tertiary: #000000;
 
     /* Experience type colors */
-    --type-quiz: #818cf8;
-    --type-trivia: #f87171;
-    --type-poll: #60a5fa;
-    --type-personality: #c084fc;
-    --type-story: #f472b6;
-    --type-clicker: #34d399;
-    --type-this-or-that: #fbbf24;
-    --type-memory: #fbbf24;
-    --type-tier: #fb923c;
-    --type-creator: #22d3ee;
+    --type-quiz: #f894c0;
+    --type-trivia: #7e7eff;
+    --type-poll: #f894c0;
+    --type-personality: #7e7eff;
+    --type-story: #f894c0;
+    --type-clicker: #7e7eff;
+    --type-this-or-that: #000000;
+    --type-memory: #000000;
+    --type-tier: #f894c0;
+    --type-creator: #7e7eff;
 
     /* Creator progression */
     --rank-bronze: #cd7f32;
