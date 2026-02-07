@@ -1,0 +1,464 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+ * Neon Craft v4 Design System - CSS Variables
+ * ============================================================================ */
+
+@layer base {
+  :root {
+    /* Background hierarchy */
+    --bg-deep: #0d0d0f;
+    --bg-surface: #16161a;
+    --bg-elevated: #1e1e24;
+    --bg-hover: #26262e;
+
+    /* Text hierarchy */
+    --text-primary: #ededef;
+    --text-secondary: #8b8b9a;
+    --text-muted: #55556a;
+
+    /* Accent colors */
+    --accent-primary: #ff6b4a;
+    --accent-secondary: #a855f7;
+    --accent-tertiary: #22d3ee;
+
+    /* Experience type colors */
+    --type-quiz: #818cf8;
+    --type-trivia: #f87171;
+    --type-poll: #60a5fa;
+    --type-personality: #c084fc;
+    --type-story: #f472b6;
+    --type-clicker: #34d399;
+    --type-this-or-that: #fbbf24;
+    --type-memory: #fbbf24;
+    --type-tier: #fb923c;
+    --type-creator: #22d3ee;
+
+    /* Creator progression */
+    --rank-bronze: #cd7f32;
+    --rank-silver: #c0c0c0;
+    --rank-gold: #ffd700;
+    --rank-platinum: #e5e4e2;
+    --rank-diamond: #b9f2ff;
+
+    /* Decorative */
+    --sparkle: #ffe066;
+
+    /* Semantic colors */
+    --success: #34d399;
+    --warning: #fbbf24;
+    --error: #f87171;
+    --info: #60a5fa;
+
+    /* Glow effects */
+    --glow-coral: rgba(255, 107, 74, 0.3);
+    --glow-purple: rgba(168, 85, 247, 0.3);
+    --glow-cyan: rgba(34, 211, 238, 0.3);
+
+    /* Legacy shadcn support */
+    --background: #0d0d0f;
+    --foreground: #ededef;
+    --card: #16161a;
+    --card-foreground: #ededef;
+    --popover: #1e1e24;
+    --popover-foreground: #ededef;
+    --primary: #ff6b4a;
+    --primary-foreground: #ffffff;
+    --secondary: #a855f7;
+    --secondary-foreground: #ffffff;
+    --muted: #1e1e24;
+    --muted-foreground: #8b8b9a;
+    --accent: #22d3ee;
+    --accent-foreground: #0d0d0f;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #2a2a32;
+    --input: #2a2a32;
+    --ring: #ff6b4a;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-bg-deep text-text-primary antialiased;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+/* ============================================================================
+ * Typography Utilities
+ * ============================================================================ */
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      var(--accent-primary) 0%,
+      var(--accent-secondary) 100%
+    );
+  }
+
+  .text-gradient-reverse {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      var(--accent-secondary) 0%,
+      var(--accent-primary) 100%
+    );
+  }
+}
+
+/* ============================================================================
+ * Animation Utilities
+ * ============================================================================ */
+
+@layer utilities {
+  /* Shimmer effect for skeletons */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Streaming dots for AI typing indicator */
+  .streaming-dot {
+    animation: streaming-dot 1.4s ease-in-out infinite;
+  }
+  .streaming-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .streaming-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  /* Button press effect */
+  .btn-press {
+    @apply transition-transform active:scale-[0.97];
+  }
+
+  /* Safe area for mobile */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  .safe-left {
+    padding-left: env(safe-area-inset-left, 0);
+  }
+  .safe-right {
+    padding-right: env(safe-area-inset-right, 0);
+  }
+
+  /* Activity shell — prevent over-scroll in Discord iframe */
+  .activity-shell {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ============================================================================
+ * Component Base Classes
+ * ============================================================================ */
+
+@layer components {
+  /* Card variants */
+  .card {
+    @apply rounded-md border border-white/10 bg-bg-surface;
+  }
+  .card-hover {
+    @apply cursor-pointer transition-all duration-200 hover:border-white/20 hover:shadow-glow;
+  }
+
+  /* Input base */
+  .input-base {
+    @apply w-full rounded-sm border border-white/10 bg-bg-elevated px-4 py-3;
+    @apply text-text-primary placeholder:text-text-muted;
+    @apply transition-all duration-150;
+    @apply focus:border-accent-tertiary focus:shadow-glow-cyan focus:outline-none focus:ring-0;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply bg-accent-primary text-white shadow-glow hover:bg-accent-primary/90;
+    @apply inline-flex items-center justify-center gap-2 font-medium;
+    @apply btn-press transition-all duration-150;
+    @apply disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100;
+  }
+
+  .btn-secondary {
+    @apply border border-white/10 bg-bg-elevated text-text-primary;
+    @apply hover:border-white/20 hover:bg-bg-hover;
+    @apply inline-flex items-center justify-center gap-2 font-medium;
+    @apply btn-press transition-all duration-150;
+    @apply disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100;
+  }
+
+  .btn-ghost {
+    @apply text-text-secondary hover:bg-bg-hover hover:text-text-primary;
+    @apply inline-flex items-center justify-center gap-2 font-medium;
+    @apply btn-press transition-all duration-150;
+    @apply disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100;
+  }
+}
+
+/* ============================================================================
+ * Keyframes
+ * ============================================================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes streaming-dot {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px var(--glow-coral);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--glow-coral);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes sparkle-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-6px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-down {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drop-bounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes toast-in {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+}
+
+/* ============================================================================
+ * Neon Craft v4 — New Utilities
+ * ============================================================================ */
+
+@layer utilities {
+  .text-gradient-display {
+    @apply bg-clip-text font-display text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      var(--accent-primary) 0%,
+      var(--accent-secondary) 50%,
+      var(--accent-tertiary) 100%
+    );
+  }
+}
+
+@layer components {
+  /* Progress bar */
+  .progress-bar {
+    @apply h-2 overflow-hidden rounded-full bg-bg-elevated;
+  }
+  .progress-bar-fill {
+    @apply h-full rounded-full;
+    transform-origin: left;
+    animation: progress-fill 1s ease-out forwards;
+  }
+
+  /* Toast */
+  .toast-enter {
+    animation: toast-in 0.2s ease-out forwards;
+  }
+  .toast-exit {
+    animation: toast-out 0.15s ease-in forwards;
+  }
+
+  /* Pro badge */
+  .pro-badge {
+    @apply inline-flex items-center rounded-full px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider;
+    background: linear-gradient(
+      135deg,
+      var(--accent-primary),
+      var(--accent-secondary)
+    );
+    color: white;
+  }
+}
+
+/* ============================================================================
+ * Scrollbar Styling
+ * ============================================================================ */
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-hover) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: var(--bg-hover);
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+  }
+}
+
+/* ============================================================================
+ * Reduced Motion Support
+ * ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
