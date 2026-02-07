@@ -90,6 +90,10 @@
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
+    /* Comic Dot Pattern */
+    background-image: radial-gradient(#000 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: var(--bg-deep);
   }
 }
 

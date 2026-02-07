@@ -90,10 +90,10 @@ export function TypeShowcase() {
           {TYPES.map((item) => (
             <div
               key={item.type}
-              className={`group relative flex flex-col items-center rounded-3xl border-4 border-black bg-white p-6 text-center transition-all duration-200 hover:-rotate-2 hover:scale-105 ${item.glowClass}`}
+              className={`group relative flex flex-col items-center rounded-3xl border-4 border-black bg-white p-6 text-center shadow-comic transition-all duration-200 hover:-translate-y-2 hover:rotate-1 hover:shadow-comic-lg ${item.glowClass}`}
             >
               {item.isPro && (
-                <span className="pro-badge absolute -right-2 -top-2 rotate-12 border-2 border-black">Pro</span>
+                <span className="pro-badge absolute -right-4 -top-4 rotate-12 border-4 border-black bg-accent-primary px-3 py-1 text-xs font-black uppercase text-black shadow-comic">Pro</span>
               )}
               <ExperienceCharacter
                 type={item.type}

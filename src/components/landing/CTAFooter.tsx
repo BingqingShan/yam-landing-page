@@ -18,7 +18,7 @@ export function CTAFooter() {
 
         <a
           href="#types"
-          className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-10 py-5 font-display text-xl font-bold text-white shadow-xl transition-all duration-200 hover:scale-110 active:scale-[0.97]"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-10 py-5 font-display text-xl font-bold uppercase tracking-wider text-white shadow-comic-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-comic-hover active:translate-y-0 active:shadow-comic"
         >
           Start Creating — Free
         </a>

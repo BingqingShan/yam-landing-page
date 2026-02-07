@@ -114,6 +114,11 @@ const config: Config = {
       // SHADOWS & GLOWS
       // ============================================================================
       boxShadow: {
+        // Hard comic shadows
+        'comic': '4px 4px 0px 0px #000000',
+        'comic-lg': '8px 8px 0px 0px #000000',
+        'comic-hover': '6px 6px 0px 0px #000000',
+        
         glow: '0 0 20px rgba(248, 148, 192, 0.3)',
         'glow-lg': '0 0 40px rgba(248, 148, 192, 0.4)',
         'glow-purple': '0 0 20px rgba(126, 126, 255, 0.3)',

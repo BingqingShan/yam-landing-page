@@ -23,7 +23,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <a
               href="#types"
-              className="rounded-full bg-black px-6 py-2 text-sm font-medium text-white transition-all hover:scale-105"
+              className="rounded-full border-2 border-black bg-white px-6 py-2 text-sm font-bold uppercase text-black shadow-comic transition-all hover:-translate-y-0.5 hover:shadow-comic-hover"
             >
               Get Started
             </a>
